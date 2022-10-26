@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const PORT = process.env.PORT || 3001;
-const id = require('uniqid');
+const uniqid = require('uniqid');
 const notes = require('./db/db.json');
 const util = require('util');
 
@@ -34,7 +34,13 @@ app.post('/api/notes', (req, res) => {                                          
     fs.readFile(path.join(__dirname, 'db/db.json'), 'utf8', (err, data) => {                // Read the db.json file
         if (err) throw err;
         const notes = JSON.parse(data);                                                     // Parse the data
-        notes.push(req.body);                                                               // Add it to the db.json file
+        notes.push(
+            {
+                id: uniqid(),
+                title: req.body.title,
+                text: req.body.text
+            }
+        )
         fs.writeFile(path.join(__dirname, 'db/db.json'), JSON.stringify(notes), (err) => {  // Write the db.json file
             if (err) throw err;
             res.json(notes);                                                                // Return the new note to the client.

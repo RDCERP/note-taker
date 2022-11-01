@@ -12,7 +12,7 @@
   * [Credits](#credits) 
 
   ## Description
-  This a a project that allows you to take notes and delete tthem.
+  This a a project that allows you to take notes and delete them.
   ## Installation
   You will need to clone the app from github.  Install heroku.  Then from command line in the folder  type Heroku create.	Type Heroku open.
   ## Usage

@@ -25,6 +25,7 @@
   ## Questions
   For more information you can reach out to me at rdcerp@gmail.com 
   or you can find me on GitHub at https://github.com/rdcerp
+  You can run the app by clicking the following link. https://radiant-citadel-34737.herokuapp.com/
 
   
   undefined
